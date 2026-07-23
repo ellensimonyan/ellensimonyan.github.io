@@ -1,1 +1,414 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elle's — Fine Art & Objects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0D0A;
+    --panel:#17150F;
+    --gold:#C7A build:#C7A45A;
+    --gold-2:#C7A45A;
+    --brass:#8C6D3A;
+    --ivory:#F3EEE2;
+    --parch:#EBE4D2;
+    --grey:#9A917C;
+    --line:#2C2A20;
+    --wine:#5C1D22;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--gold-2);color:var(--ink);}
+  img{display:block;max-width:100%;}
 
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    border-bottom:1px solid var(--line);
+    background:var(--ink);
+  }
+  .topbar-inner{
+    max-width:1440px;margin:0 auto;padding:9px 48px;
+    display:flex;justify-content:space-between;
+    font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);
+  }
+  .topbar-inner span{margin-right:28px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(14,13,10,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:1440px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 48px;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;letter-spacing:0.14em;
+    font-weight:500;color:var(--ivory);
+  }
+  .brand em{color:var(--gold-2);font-style:normal;}
+  .nav-links{display:flex;gap:44px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);}
+  .nav-links a{position:relative;padding-bottom:4px;transition:color .25s;}
+  .nav-links a:hover{color:var(--gold-2);}
+  .nav-cta{
+    border:1px solid var(--gold-2);color:var(--gold-2);
+    font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;
+    padding:10px 22px;transition:all .25s;
+  }
+  .nav-cta:hover{background:var(--gold-2);color:var(--ink);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    max-width:1440px;margin:0 auto;
+    padding:120px 48px 100px;
+    display:grid;grid-template-columns:1fr 0.85fr;gap:80px;align-items:center;
+  }
+  .hero::before{
+    content:"";position:absolute;top:0;left:48px;right:48px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent);
+  }
+  .hero-eyebrow{
+    display:flex;align-items:center;gap:14px;
+    font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-2);
+    margin-bottom:32px;
+  }
+  .hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--gold-2);}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:400;
+    font-size:clamp(46px,5.4vw,80px);
+    line-height:1.02;letter-spacing:-0.01em;
+    color:var(--ivory);
+  }
+  .hero h1 em{font-style:italic;font-weight:300;color:var(--gold-2);}
+  .hero p.lede{
+    margin-top:28px;font-size:16px;line-height:1.8;color:var(--grey);max-width:46ch;
+  }
+  .hero-actions{margin-top:44px;display:flex;gap:18px;align-items:center;}
+  .btn-primary{
+    background:var(--gold-2);color:var(--ink);
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    padding:16px 32px;font-weight:500;transition:opacity .25s;
+  }
+  .btn-primary:hover{opacity:0.85;}
+  .btn-ghost{
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ivory);
+    border-bottom:1px solid var(--line);padding-bottom:4px;
+  }
+
+  .hero-panel{
+    position:relative;
+    aspect-ratio:4/5;
+    background:radial-gradient(circle at 30% 25%, rgba(199,164,90,0.16), transparent 55%),
+      linear-gradient(150deg,#1E1B12 0%,#141209 60%,#0E0D0A 100%);
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:32px;
+  }
+  .hero-panel .lot-tag{
+    font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-2);margin-bottom:10px;
+  }
+  .hero-panel h3{
+    font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--ivory);margin-bottom:6px;
+  }
+  .hero-panel .est{font-size:12px;color:var(--grey);letter-spacing:0.04em;}
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .marquee-wrap{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:var(--panel);overflow:hidden;padding:16px 0;
+  }
+  .marquee{
+    display:flex;gap:60px;white-space:nowrap;
+    animation:scroll 32s linear infinite;
+    font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:0.05em;color:var(--grey);
+  }
+  .marquee span{color:var(--gold-2);margin:0 14px;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.marquee{animation:none;}}
+
+  /* ---------- SALE CALENDAR ---------- */
+  .section{max-width:1440px;margin:0 auto;padding:110px 48px;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:56px;
+  }
+  .section-head .eyebrow{
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-2);display:block;margin-bottom:14px;
+  }
+  .section-head h2{
+    font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.2vw,44px);color:var(--ivory);
+  }
+  .section-head .view-all{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid var(--line);padding-bottom:4px;}
+  .section-head .view-all:hover{color:var(--gold-2);}
+
+  .sales-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .sale-card{background:var(--ink);padding:40px 34px;transition:background .3s;}
+  .sale-card:hover{background:var(--panel);}
+  .sale-card .date{
+    font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold-2);letter-spacing:0.06em;margin-bottom:22px;
+  }
+  .sale-card h3{
+    font-family:'Fraunces',serif;font-weight:400;font-size:24px;color:var(--ivory);margin-bottom:14px;line-height:1.25;
+  }
+  .sale-card p{font-size:13.5px;line-height:1.7;color:var(--grey);margin-bottom:22px;}
+  .sale-card .loc{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);border-top:1px solid var(--line);padding-top:18px;}
+
+  /* ---------- FEATURED LOTS ---------- */
+  .lots{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;}
+  .lot-card .frame{
+    aspect-ratio:3/4;position:relative;overflow:hidden;margin-bottom:22px;
+    background:linear-gradient(160deg,#211D13 0%,#161309 55%,#0E0D0A 100%);
+    border:1px solid var(--line);
+  }
+  .lot-card .frame::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 65% 30%, rgba(199,164,90,0.14), transparent 60%);
+  }
+  .lot-card .frame .no{
+    position:absolute;top:18px;left:18px;
+    font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.1em;color:var(--gold-2);
+  }
+  .lot-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:21px;color:var(--ivory);margin-bottom:6px;}
+  .lot-card .medium{font-size:12.5px;color:var(--grey);font-style:italic;margin-bottom:14px;}
+  .lot-card .estimate{
+    display:flex;justify-content:space-between;font-size:11px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--grey);border-top:1px solid var(--line);padding-top:14px;
+  }
+  .lot-card .estimate strong{display:block;color:var(--gold-2);font-family:'Cormorant Garamond',serif;font-size:16px;text-transform:none;letter-spacing:0;margin-top:3px;}
+
+  /* ---------- DEPARTMENTS ---------- */
+  .depts{
+    max-width:1440px;margin:0 auto;padding:0 48px 110px;
+display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);
+  }
+  .dept{
+    background:var(--ink);padding:44px 28px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:16px;
+    transition:background .3s;cursor:pointer;
+  }
+  .dept:hover{background:var(--panel);}
+  .dept .mark{
+    width:38px;height:38px;border:1px solid var(--gold-2);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;color:var(--gold-2);font-size:15px;
+  }
+  .dept h4{font-family:'Fraunces',serif;font-weight:400;font-size:16px;color:var(--ivory);letter-spacing:0.02em;}
+  .dept span{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);}
+
+  /* ---------- QUOTE / PROVENANCE ---------- */
+  .provenance{
+    background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .provenance-inner{
+    max-width:1000px;margin:0 auto;padding:130px 48px;text-align:center;
+  }
+  .provenance .mark-lines{
+    display:flex;justify-content:center;gap:8px;margin-bottom:36px;
+  }
+  .provenance .mark-lines span{width:26px;height:1px;background:var(--gold-2);align-self:center;}
+  .provenance blockquote{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(26px,3vw,38px);line-height:1.5;color:var(--ivory);
+  }
+  .provenance cite{
+    display:block;margin-top:32px;font-style:normal;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-2);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:100px 48px 40px;}
+  .footer-inner{max-width:1440px;margin:0 auto;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:60px;
+    padding-bottom:60px;border-bottom:1px solid var(--line);margin-bottom:32px;
+  }
+  .footer-grid .brand{font-size:24px;margin-bottom:16px;}
+  .footer-grid p{font-size:13px;line-height:1.75;color:var(--grey);max-width:32ch;}
+  .footer-col h5{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px;}
+  .footer-col a{display:block;font-size:13.5px;color:var(--grey);margin-bottom:12px;transition:color .2s;}
+  .footer-col a:hover{color:var(--ivory);}
+  .footer-bottom{display:flex;justify-content:space-between;font-size:10.5px;color:#615A46;letter-spacing:0.05em;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:960px){
+    .nav-links{display:none;}
+    .hero{grid-template-columns:1fr;padding:70px 24px 60px;gap:44px;}
+    .sales-grid,.lots{grid-template-columns:1fr;}
+    .depts{grid-template-columns:repeat(2,1fr);padding:0 24px 70px;}
+    .section{padding:70px 24px;}
+    .footer-grid{grid-template-columns:1fr;gap:36px;}
+    .topbar-inner{padding:9px 24px;flex-wrap:wrap;gap:6px;}
+    .nav{padding:20px 24px;}
+    footer{padding:70px 24px 28px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div><span>Yerevan</span><span>Paris</span><span>London</span></div>
+    <div>Private sales by appointment</div>
+  </div>
+</div>
+
+<header>
+  <div class="nav">
+    <div class="brand">ELL<em>E'S</em></div>
+    <nav class="nav-links">
+      <a href="#sales">Sales</a>
+      <a href="#lots">Featured Lots</a>
+      <a href="#departments">Departments</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Request a Valuation</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow">Autumn Sale — Lot 1 of 84</div>
+    <h1>The art of the<br><em>considered</em> acquisition.</h1>
+    <p class="lede">A private house for painting, works on paper, and fine objects — each sale assembled with the same restraint we'd want applied to our own collection.</p>
+    <div class="hero-actions">
+      <a href="#lots" class="btn-primary">View Current Sale</a>
+      <a href="#sales" class="btn-ghost">Upcoming Calendar</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="lot-tag">Lot 01 · Evening Sale</div><h3>Untitled (Interior, Evening)</h3>
+    <div class="est">Estimate on request</div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Modern & Contemporary Art</span>·<span>Works on Paper</span>·<span>Fine Jewelry</span>·<span>Rare Objects</span>·<span>Private Collections</span>·<span>Modern & Contemporary Art</span>·<span>Works on Paper</span>·<span>Fine Jewelry</span>·<span>Rare Objects</span>·<span>Private Collections</span>
+  </div>
+</div>
+
+<section class="section" id="sales">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Auction Calendar</span>
+      <h2>Upcoming Sales</h2>
+    </div>
+    <a href="#" class="view-all">Full Calendar →</a>
+  </div>
+  <div class="sales-grid">
+    <div class="sale-card">
+      <div class="date">14 September, 6PM</div>
+      <h3>The Evening Sale: Modern & Contemporary</h3>
+      <p>A curated selection of forty works spanning three generations of painting.</p>
+      <div class="loc">Live · Yerevan Salesroom</div>
+    </div>
+    <div class="sale-card">
+      <div class="date">2 October, 11AM</div>
+      <h3>Works on Paper: A Private Collection</h3>
+      <p>Drawings, studies, and correspondence pieces offered without reserve.</p>
+      <div class="loc">Online · Timed Sale</div>
+    </div>
+    <div class="sale-card">
+      <div class="date">19 October, 3PM</div>
+      <h3>Objects of Distinction</h3>
+      <p>Rare furniture, decorative arts, and objects of provenance.</p>
+      <div class="loc">Live · Paris Salesroom</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lots">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Currently on View</span>
+      <h2>Featured Lots</h2>
+    </div>
+    <a href="#" class="view-all">All Lots →</a>
+  </div>
+  <div class="lots">
+    <div class="lot-card">
+      <div class="frame"><span class="no">Lot 01</span></div>
+      <h3>Untitled (Interior, Evening)</h3>
+      <div class="medium">Oil on linen, 2025</div>
+      <div class="estimate">Estimate<strong>$18,000 – 24,000</strong></div>
+    </div>
+    <div class="lot-card">
+      <div class="frame"><span class="no">Lot 02</span></div>
+      <h3>Second Threshold</h3>
+      <div class="medium">Oil and cold wax on panel, 2024</div>
+      <div class="estimate">Estimate<strong>$9,500 – 13,000</strong></div>
+    </div>
+    <div class="lot-card">
+      <div class="frame"><span class="no">Lot 03</span></div>
+      <h3>Correspondence No. 4</h3>
+      <div class="medium">Mixed pigment on paper, 2026</div>
+      <div class="estimate">Estimate<strong>$4,200 – 6,000</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="depts" id="departments">
+  <div class="dept"><div class="mark">M</div><h4>Modern Art</h4><span>142 lots</span></div>
+  <div class="dept"><div class="mark">P</div><h4>Works on Paper</h4><span>68 lots</span></div>
+  <div class="dept"><div class="mark">J</div><h4>Fine Jewelry</h4><span>91 lots</span></div>
+  <div class="dept"><div class="mark">O</div><h4>Rare Objects</h4><span>54 lots</span></div>
+</section>
+
+<div class="provenance">
+  <div class="provenance-inner">
+    <div class="mark-lines"><span></span></div>
+    <blockquote>"Every lot that passes through our rooms carries a history we take as seriously as its estimate."</blockquote>
+    <cite>— Head of Sale, Modern & Contemporary Department</cite>
+  </div>
+</div>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">ELL<em>E'S</em></div>
+        <p>A private house for fine art and objects, working by appointment with collectors and estates.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Visit</h5>
+        <a href="#">Yerevan Salesroom</a>
+        <a href="#">Paris Salesroom</a>
+        <a href="#">London, by appointment</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#">Sell With Us</a>
+        <a href="#">Private Valuations</a>
+        <a href="#">Buyer's Guide</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5><a href="mailto:hello@elles.art">hello@elles.art</a>
+        <a href="#">Instagram</a>
+        <a href="#">Catalogue Sign-up</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Elle's — Fine Art & Objects</span>
+      <span>Yerevan · Paris · London</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
