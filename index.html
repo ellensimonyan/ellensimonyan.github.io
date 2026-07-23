@@ -1,262 +1,371 @@
-!DOCTYPE html>
+Ահա ամբողջ կոդը՝ պատճենիր և տեղադրիր .html ֆայլում (օրինակ՝ `index.html`).
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elle's — Fine Art & Objects</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#0E0D0A;
-    --panel:#17150F;
-    --gold:#C7A build:#C7A45A;
-    --gold-2:#C7A45A;
-    --brass:#8C6D3A;
-    --ivory:#F3EEE2;
-    --parch:#EBE4D2;
-    --grey:#9A917C;
-    --line:#2C2A20;
-    --wine:#5C1D22;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--ink);
-    color:var(--ivory);
-    font-family:'Inter',sans-serif;
-    font-weight:300;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none;}
-  ::selection{background:var(--gold-2);color:var(--ink);}
-  img{display:block;max-width:100%;}
+:root{
+  --paper:#FAF6EF;
+  --paper-2:#F1EADB;
+  --paper-3:#E9E0CC;
+  --ink:#1C1A15;
+  --ink-soft:#57523F;
+  --wine:#7A2E2E;
+  --wine-deep:#54201F;
+  --brass:#9C7A3D;
+  --sage:#6B7256;
+  --line:#DCD1B8;
+  --line-strong:#C9BB98;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--wine);color:var(--paper);}
+img{display:block;max-width:100%;}
+button{font:inherit;background:none;border:none;color:inherit;cursor:pointer;}
+.serif{font-family:'Fraunces',serif;}
+.news{font-family:'Newsreader',serif;}
 
-  /* ---------- TOP BAR ---------- */
-  .topbar{
-    border-bottom:1px solid var(--line);
-    background:var(--ink);
-  }
-  .topbar-inner{
-    max-width:1440px;margin:0 auto;padding:9px 48px;
-    display:flex;justify-content:space-between;
-    font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);
-  }
-  .topbar-inner span{margin-right:28px;}
+.topbar{border-bottom:1px solid var(--line);background:var(--paper);}
+.topbar-inner{
+  max-width:1440px;margin:0 auto;padding:9px 48px;
+  display:flex;justify-content:space-between;
+  font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink-soft);
+}
+.topbar-inner span{margin-right:26px;}
+.topbar-inner span:last-child{margin-right:0;}
 
-  /* ---------- HEADER ---------- */
-  header{
-    position:sticky;top:0;z-index:60;
-    background:rgba(14,13,10,0.88);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{
-    max-width:1440px;margin:0 auto;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:26px 48px;
-  }
-  .brand{
-    font-family:'Cormorant Garamond',serif;
-    font-size:28px;letter-spacing:0.14em;
-    font-weight:500;color:var(--ivory);
-  }
-  .brand em{color:var(--gold-2);font-style:normal;}
-  .nav-links{display:flex;gap:44px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);}
-  .nav-links a{position:relative;padding-bottom:4px;transition:color .25s;}
-  .nav-links a:hover{color:var(--gold-2);}
-  .nav-cta{
-    border:1px solid var(--gold-2);color:var(--gold-2);
-    font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;
-    padding:10px 22px;transition:all .25s;
-  }
-  .nav-cta:hover{background:var(--gold-2);color:var(--ink);}
+header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(250,246,239,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1440px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px 48px;
+}
+.brand{
+  font-family:'Fraunces',serif;
+  font-size:26px;letter-spacing:0.06em;
+  font-weight:500;color:var(--ink);
+}
+.brand em{color:var(--wine);font-style:italic;font-weight:400;}
+.nav-links{display:flex;gap:40px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);}
+.nav-links a{position:relative;padding-bottom:4px;transition:color .25s;}
+.nav-links a:hover{color:var(--wine);}
+.nav-cta{
+  border:1px solid var(--wine);color:var(--wine);
+  font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+  padding:11px 22px;transition:all .25s;
+}
+.nav-cta:hover{background:var(--wine);color:var(--paper);}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    max-width:1440px;margin:0 auto;
-    padding:120px 48px 100px;
-    display:grid;grid-template-columns:1fr 0.85fr;gap:80px;align-items:center;
-  }
-  .hero::before{
-    content:"";position:absolute;top:0;left:48px;right:48px;height:1px;
-    background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent);
-  }
-  .hero-eyebrow{
-    display:flex;align-items:center;gap:14px;
-    font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-2);
-    margin-bottom:32px;
-  }
-  .hero-eyebrow::before{content:"";width:36px;height:1px;background:var(--gold-2);}
-  .hero h1{
-    font-family:'Fraunces',serif;font-weight:400;
-    font-size:clamp(46px,5.4vw,80px);
-    line-height:1.02;letter-spacing:-0.01em;
-    color:var(--ivory);
-  }
-  .hero h1 em{font-style:italic;font-weight:300;color:var(--gold-2);}
-  .hero p.lede{
-    margin-top:28px;font-size:16px;line-height:1.8;color:var(--grey);max-width:46ch;
-  }
-  .hero-actions{margin-top:44px;display:flex;gap:18px;align-items:center;}
-  .btn-primary{
-    background:var(--gold-2);color:var(--ink);
-    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
-    padding:16px 32px;font-weight:500;transition:opacity .25s;
-  }
-  .btn-primary:hover{opacity:0.85;}
-  .btn-ghost{
-    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ivory);
-    border-bottom:1px solid var(--line);padding-bottom:4px;
-  }
+.hero{
+  position:relative;
+  max-width:1440px;margin:0 auto;
+  padding:96px 48px 100px;
+  display:grid;grid-template-columns:1fr 0.82fr;gap:72px;align-items:center;
+}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--wine);
+  margin-bottom:30px;font-weight:500;
+}
+.hero-eyebrow::before{content:"";width:34px;height:1px;background:var(--wine);}
+.hero h1{
+  font-family:'Fraunces',serif;font-weight:400;
+  font-size:clamp(44px,5.2vw,76px);
+  line-height:1.04;letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--wine);}
+.hero p.lede{
+  margin-top:26px;font-family:'Newsreader',serif;font-size:19px;line-height:1.65;color:var(--ink-soft);max-width:44ch;
+}
+.hero-actions{margin-top:40px;display:flex;gap:20px;align-items:center;}
+.btn-primary{
+  background:var(--wine);color:var(--paper);
+  font-size:11px;letter-spacing:0.13em;text-transform:uppercase;
+  padding:16px 32px;font-weight:500;transition:background .25s;
+  display:inline-block;
+}
+.btn-primary:hover{background:var(--wine-deep);}
+.btn-ghost{
+  font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink);
+  border-bottom:1px solid var(--ink);padding-bottom:4px;
+}
+.btn-ghost:hover{color:var(--wine);border-color:var(--wine);}
 
-  .hero-panel{
-    position:relative;
-    aspect-ratio:4/5;
-    background:radial-gradient(circle at 30% 25%, rgba(199,164,90,0.16), transparent 55%),
-      linear-gradient(150deg,#1E1B12 0%,#141209 60%,#0E0D0A 100%);
-    border:1px solid var(--line);
-    display:flex;flex-direction:column;justify-content:flex-end;
-    padding:32px;
-  }
-  .hero-panel .lot-tag{
-    font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-2);margin-bottom:10px;
-  }
-  .hero-panel h3{
-    font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--ivory);margin-bottom:6px;
-  }
-  .hero-panel .est{font-size:12px;color:var(--grey);letter-spacing:0.04em;}
+.hero-panel{
+  position:relative;aspect-ratio:4/5;
+  background:var(--paper-2);
+  border:1px solid var(--line-strong);padding:18px;
+  cursor:pointer;
+}
+.hero-panel .canvas-wrap{
+  position:relative;width:100%;height:100%;overflow:hidden;background:var(--paper-3);
+}
+.hero-panel .lotnum-watermark{
+  position:absolute;right:-10px;bottom:-38px;
+  font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+  font-size:180px;line-height:1;color:var(--ink);opacity:0.05;
+  pointer-events:none;
+}
+.hero-panel .caption{
+  position:absolute;left:18px;right:18px;bottom:16px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+}
+.hero-panel .lot-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--wine);margin-bottom:8px;display:block;}
+.hero-panel h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--ink);}
+.hero-panel .est{font-size:11.5px;color:var(--ink-soft);white-space:nowrap;}
 
-  /* ---------- MARQUEE STRIP ---------- */
-  .marquee-wrap{
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    background:var(--panel);overflow:hidden;padding:16px 0;
-  }
-  .marquee{
-    display:flex;gap:60px;white-space:nowrap;
-    animation:scroll 32s linear infinite;
-    font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:0.05em;color:var(--grey);
-  }
-  .marquee span{color:var(--gold-2);margin:0 14px;}
-  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-  @media (prefers-reduced-motion: reduce){.marquee{animation:none;}}
+.marquee-wrap{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--paper-2);overflow:hidden;padding:15px 0;
+}
+.marquee{
+  display:flex;gap:56px;white-space:nowrap;
+  animation:scroll 34s linear infinite;
+  font-family:'Fraunces',serif;font-style:italic;font-size:17px;letter-spacing:0.02em;color:var(--ink-soft);
+}
+.marquee span.sep{color:var(--brass);margin:0 12px;font-style:normal;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){.marquee{animation:none;}}
 
-  /* ---------- SALE CALENDAR ---------- */
-  .section{max-width:1440px;margin:0 auto;padding:110px 48px;}
-  .section-head{
-    display:flex;justify-content:space-between;align-items:flex-end;
-    margin-bottom:56px;
-  }
-  .section-head .eyebrow{
-    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-2);display:block;margin-bottom:14px;
-  }
-  .section-head h2{
-    font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.2vw,44px);color:var(--ivory);
-  }
-  .section-head .view-all{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid var(--line);padding-bottom:4px;}
-  .section-head .view-all:hover{color:var(--gold-2);}
+.section{max-width:1440px;margin:0 auto;padding:104px 48px;}
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:52px;
+}
+.section-head .eyebrow{
+  font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--wine);display:block;margin-bottom:12px;font-weight:500;
+}
+.section-head h2{
+  font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,3vw,42px);color:var(--ink);
+}
+.section-head .view-all{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--line-strong);padding-bottom:4px;}
+.section-head .view-all:hover{color:var(--wine);border-color:var(--wine);}
 
-  .sales-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-  .sale-card{background:var(--ink);padding:40px 34px;transition:background .3s;}
-  .sale-card:hover{background:var(--panel);}
-  .sale-card .date{
-    font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold-2);letter-spacing:0.06em;margin-bottom:22px;
-  }
-  .sale-card h3{
-    font-family:'Fraunces',serif;font-weight:400;font-size:24px;color:var(--ivory);margin-bottom:14px;line-height:1.25;
-  }
-  .sale-card p{font-size:13.5px;line-height:1.7;color:var(--grey);margin-bottom:22px;}
-  .sale-card .loc{font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);border-top:1px solid var(--line);padding-top:18px;}
+.sales-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+.sale-card{background:var(--paper);padding:38px 32px;transition:background .3s;}
+.sale-card:hover{background:var(--paper-2);}
+.sale-card .date{
+  font-family:'Fraunces',serif;font-size:14px;color:var(--wine);letter-spacing:0.04em;margin-bottom:20px;font-weight:500;
+}
+.sale-card h3{
+  font-family:'Fraunces',serif;font-weight:400;font-size:23px;color:var(--ink);margin-bottom:13px;line-height:1.28;
+}
+.sale-card p{font-family:'Newsreader',serif;font-size:15px;line-height:1.6;color:var(--ink-soft);margin-bottom:20px;}
+.sale-card .loc{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;}
 
-  /* ---------- FEATURED LOTS ---------- */
-  .lots{display:grid;grid-template-columns:repeat(3,1fr);gap:44px;}
-  .lot-card .frame{
-    aspect-ratio:3/4;position:relative;overflow:hidden;margin-bottom:22px;
-    background:linear-gradient(160deg,#211D13 0%,#161309 55%,#0E0D0A 100%);
-    border:1px solid var(--line);
-  }
-  .lot-card .frame::after{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 65% 30%, rgba(199,164,90,0.14), transparent 60%);
-  }
-  .lot-card .frame .no{
-    position:absolute;top:18px;left:18px;
-    font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.1em;color:var(--gold-2);
-  }
-  .lot-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:21px;color:var(--ivory);margin-bottom:6px;}
-  .lot-card .medium{font-size:12.5px;color:var(--grey);font-style:italic;margin-bottom:14px;}
-  .lot-card .estimate{
-    display:flex;justify-content:space-between;font-size:11px;letter-spacing:0.06em;
-    text-transform:uppercase;color:var(--grey);border-top:1px solid var(--line);padding-top:14px;
-  }
-  .lot-card .estimate strong{display:block;color:var(--gold-2);font-family:'Cormorant Garamond',serif;font-size:16px;text-transform:none;letter-spacing:0;margin-top:3px;}
+.lots{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.lot-card{cursor:pointer;}
+.lot-card .frame{
+  aspect-ratio:3/4;position:relative;overflow:hidden;margin-bottom:20px;
+  background:var(--paper-2);border:1px solid var(--line-strong);
+  padding:14px;
+  transition:border-color .3s, transform .3s;
+}
+.lot-card:hover .frame{border-color:var(--wine);transform:translateY(-3px);}
+.lot-card .canvas-wrap{position:relative;width:100%;height:100%;overflow:hidden;background:var(--paper-3);}
+.lot-card .lotnum-watermark{
+  position:absolute;right:-6px;bottom:-30px;
+  font-family:'Fraunces',serif;font-weight:300;font-style:italic;
+  font-size:120px;line-height:1;color:var(--ink);opacity:0.055;pointer-events:none;
+}
+.lot-card .no{
+  position:absolute;top:12px;left:12px;z-index:2;
+  font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--wine);font-weight:500;
+}
+.lot-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:20px;color:var(--ink);margin-bottom:6px;}
+.lot-card .medium{font-family:'Newsreader',serif;font-style:italic;font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;}
+.lot-card .estimate{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:0.06em;
+  text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;
+}
+.lot-card .estimate strong{display:block;color:var(--wine);font-family:'Fraunces',serif;font-size:16px;text-transform:none;letter-spacing:0;margin-top:3px;font-weight:500;}
 
-  /* ---------- DEPARTMENTS ---------- */
-  .depts{
-    max-width:1440px;margin:0 auto;padding:0 48px 110px;
-display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);
-  }
-  .dept{
-    background:var(--ink);padding:44px 28px;text-align:center;
-    display:flex;flex-direction:column;align-items:center;gap:16px;
-    transition:background .3s;cursor:pointer;
-  }
-  .dept:hover{background:var(--panel);}
-  .dept .mark{
-    width:38px;height:38px;border:1px solid var(--gold-2);border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Cormorant Garamond',serif;color:var(--gold-2);font-size:15px;
-  }
-  .dept h4{font-family:'Fraunces',serif;font-weight:400;font-size:16px;color:var(--ivory);letter-spacing:0.02em;}
-  .dept span{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);}
+.wash-1{background:radial-gradient(ellipse at 35% 30%,#B8895B 0%,transparent 55%),radial-gradient(ellipse at 70% 75%,#5E6647 0%,transparent 60%),var(--paper-3);}
+.wash-2{background:radial-gradient(ellipse at 65% 25%,#7A2E2E 0%,transparent 50%),radial-gradient(ellipse at 30% 70%,#9C7A3D 0%,transparent 55%),var(--paper-3);}
+.wash-3{background:radial-gradient(ellipse at 40% 60%,#6B7256 0%,transparent 55%),radial-gradient(ellipse at 75% 20%,#B8895B 0%,transparent 50%),var(--paper-3);}
+.wash-4{background:radial-gradient(ellipse at 50% 40%,#54201F 0%,transparent 55%),radial-gradient(ellipse at 20% 80%,#9C7A3D 0%,transparent 50%),var(--paper-3);}
+.wash-5{background:radial-gradient(ellipse at 30% 35%,#9C7A3D 0%,transparent 55%),radial-gradient(ellipse at 75% 70%,#7A2E2E 0%,transparent 50%),var(--paper-3);}
+.wash-6{background:radial-gradient(ellipse at 60% 50%,#6B7256 0%,transparent 60%),var(--paper-3);}
 
-  /* ---------- QUOTE / PROVENANCE ---------- */
-  .provenance{
-    background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  }
-  .provenance-inner{
-    max-width:1000px;margin:0 auto;padding:130px 48px;text-align:center;
-  }
-  .provenance .mark-lines{
-    display:flex;justify-content:center;gap:8px;margin-bottom:36px;
-  }
-  .provenance .mark-lines span{width:26px;height:1px;background:var(--gold-2);align-self:center;}
-  .provenance blockquote{
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-    font-size:clamp(26px,3vw,38px);line-height:1.5;color:var(--ivory);
-  }
-  .provenance cite{
-    display:block;margin-top:32px;font-style:normal;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-2);
-  }
+.depts{
+  max-width:1440px;margin:0 auto;padding:0 48px 104px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);
+}
+.dept{
+  background:var(--paper);padding:42px 26px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:15px;
+  transition:background .3s;cursor:pointer;
+}
+.dept:hover{background:var(--paper-2);}
+.dept .mark{
+  width:36px;height:36px;border:1px solid var(--wine);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;color:var(--wine);font-size:14px;font-style:italic;
+}
+.dept h4{font-family:'Fraunces',serif;font-weight:400;font-size:16px;color:var(--ink);letter-spacing:0.01em;}
+.dept span{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);}
 
-  /* ---------- FOOTER ---------- */
-  footer{padding:100px 48px 40px;}
-  .footer-inner{max-width:1440px;margin:0 auto;}
-  .footer-grid{
-    display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:60px;
-    padding-bottom:60px;border-bottom:1px solid var(--line);margin-bottom:32px;
-  }
-  .footer-grid .brand{font-size:24px;margin-bottom:16px;}
-  .footer-grid p{font-size:13px;line-height:1.75;color:var(--grey);max-width:32ch;}
-  .footer-col h5{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-2);margin-bottom:20px;}
-  .footer-col a{display:block;font-size:13.5px;color:var(--grey);margin-bottom:12px;transition:color .2s;}
-  .footer-col a:hover{color:var(--ivory);}
-  .footer-bottom{display:flex;justify-content:space-between;font-size:10.5px;color:#615A46;letter-spacing:0.05em;}
+.provenance{background:var(--ink);}
+.provenance-inner{
+  max-width:980px;margin:0 auto;padding:120px 48px;text-align:center;
+}
+.provenance .mark-lines{display:flex;justify-content:center;gap:8px;margin-bottom:34px;}
+.provenance .mark-lines span{width:26px;height:1px;background:var(--brass);align-self:center;}
+.provenance blockquote{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+  font-size:clamp(26px,2.8vw,36px);line-height:1.5;color:var(--paper);
+}
+.provenance cite{
+  display:block;margin-top:30px;font-style:normal;font-size:11px;letter-spacing:0.13em;
+  text-transform:uppercase;color:var(--brass);
+}
 
-  /* ---------- RESPONSIVE ---------- */
-  @media(max-width:960px){
-    .nav-links{display:none;}
-    .hero{grid-template-columns:1fr;padding:70px 24px 60px;gap:44px;}
-    .sales-grid,.lots{grid-template-columns:1fr;}
-    .depts{grid-template-columns:repeat(2,1fr);padding:0 24px 70px;}
-    .section{padding:70px 24px;}
-    .footer-grid{grid-template-columns:1fr;gap:36px;}
-    .topbar-inner{padding:9px 24px;flex-wrap:wrap;gap:6px;}
-    .nav{padding:20px 24px;}
-    footer{padding:70px 24px 28px;}
-  }
+footer{padding:96px 48px 36px;background:var(--paper-2);}
+.footer-inner{max-width:1440px;margin:0 auto;}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:56px;
+  padding-bottom:56px;border-bottom:1px solid var(--line-strong);margin-bottom:28px;
+}
+.footer-grid .brand{font-size:23px;margin-bottom:15px;}
+.footer-grid p{font-family:'Newsreader',serif;font-size:14.5px;line-height:1.65;color:var(--ink-soft);max-width:32ch;}
+.footer-col h5{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--wine);margin-bottom:18px;font-weight:500;}
+.footer-col a{display:block;font-size:13.5px;color:var(--ink-soft);margin-bottom:11px;transition:color .2s;}
+.footer-col a:hover{color:var(--ink);}
+.footer-bottom{display:flex;justify-content:space-between;font-size:10.5px;color:#948B6E;letter-spacing:0.05em;}
+
+.lot-overlay{
+  position:fixed;inset:0;z-index:200;
+  background:var(--paper);
+  overflow-y:auto;
+  opacity:0;pointer-events:none;
+  transform:translateY(20px);
+  transition:opacity .35s ease, transform .35s ease;
+}
+.lot-overlay.active{opacity:1;pointer-events:auto;transform:translateY(0);}
+.lot-overlay-topbar{
+  position:sticky;top:0;z-index:5;
+  background:rgba(250,246,239,0.95);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:20px 48px;display:flex;justify-content:space-between;align-items:center;
+}
+.lot-overlay-topbar .back{
+  font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink-soft);
+  display:flex;align-items:center;gap:10px;transition:color .2s;
+}
+.lot-overlay-topbar .back:hover{color:var(--wine);}
+.lot-overlay-topbar .back svg{width:14px;height:14px;}
+.lot-overlay-topbar .lot-nav-id{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink-soft);}
+
+.lot-detail{
+  max-width:1300px;margin:0 auto;
+  padding:60px 48px 130px;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;
+}
+.lot-detail-media .main-frame{
+  aspect-ratio:4/5;position:relative;overflow:hidden;
+  background:var(--paper-2);border:1px solid var(--line-strong);
+  padding:20px;margin-bottom:16px;
+}
+.lot-detail-media .main-frame .canvas-wrap{position:relative;width:100%;height:100%;overflow:hidden;background:var(--paper-3);}
+.lot-detail-media .main-frame .lotnum-watermark{
+  position:absolute;right:-14px;bottom:-46px;
+  font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:200px;line-height:1;color:var(--ink);opacity:0.05;
+}
+.thumb-row{display:flex;gap:12px;}
+.thumb{
+  width:72px;aspect-ratio:4/5;border:1px solid var(--line-strong);cursor:pointer;position:relative;overflow:hidden;
+  background:var(--paper-2);padding:6px;transition:border-color .2s;
+}
+.thumb .canvas-wrap{width:100%;height:100%;background:var(--paper-3);}
+.thumb:hover, .thumb.active{border-color:var(--wine);}
+
+.lot-detail-info .lot-tag{
+  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--wine);margin-bottom:16px;font-weight:500;
+}
+.lot-detail-info h1{
+  font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,2.8vw,40px);color:var(--ink);line-height:1.15;margin-bottom:9px;
+}
+.lot-detail-info .artist-line{
+  font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--ink-soft);margin-bottom:26px;
+}
+.spec-list{border-top:1px solid var(--line);margin-bottom:26px;}
+.spec-row{
+  display:flex;justify-content:space-between;gap:24px;
+  padding:15px 0;border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+.spec-row .k{color:var(--ink-soft);letter-spacing:0.03em;}
+.spec-row .v{color:var(--ink);text-align:right;max-width:60%;}
+
+.estimate-box{
+  background:var(--paper-2);border:1px solid var(--line-strong);padding:26px 28px;margin-bottom:30px;
+}
+.estimate-box .label{font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px;}
+.estimate-box .amount{font-family:'Fraunces',serif;font-size:27px;color:var(--wine);font-weight:500;}
+.estimate-box .sold-note{margin-top:9px;font-size:12px;color:var(--ink-soft);}
+
+.lot-actions{display:flex;flex-direction:column;gap:13px;margin-bottom:42px;}
+.lot-actions .btn-primary{width:100%;text-align:center;}
+.btn-outline{
+  width:100%;text-align:center;border:1px solid var(--line-strong);color:var(--ink);
+  font-size:11px;letter-spacing:0.13em;text-transform:uppercase;padding:15px 32px;
+  transition:border-color .25s, color .25s;
+}
+.btn-outline:hover{border-color:var(--wine);color:var(--wine);}
+
+.lot-body h3.block-h{
+  font-family:'Fraunces',serif;font-weight:500;font-size:14.5px;color:var(--ink);
+  text-transform:uppercase;letter-spacing:0.08em;margin-bottom:13px;padding-top:26px;border-top:1px solid var(--line);
+}
+.lot-body h3.block-h:first-child{border-top:none;padding-top:0;}
+.lot-body p{font-family:'Newsreader',serif;font-size:15px;line-height:1.75;color:var(--ink-soft);margin-bottom:6px;}
+.lot-body ul{list-style:none;}
+.lot-body ul li{
+  font-family:'Newsreader',serif;font-size:14.5px;line-height:1.75;color:var(--ink-soft);padding-left:16px;position:relative;
+}
+.lot-body ul li::before{content:"—";position:absolute;left:0;color:var(--wine);}
+
+.related-strip{max-width:1300px;margin:0 auto;padding:0 48px 130px;}
+.related-strip h4{
+  font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--wine);margin-bottom:30px;font-weight:500;
+}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+.related-grid .lot-card .frame{margin-bottom:12px;}
+.related-grid .lot-card h3{font-size:16px;}
+
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:64px 24px 56px;gap:40px;}
+  .sales-grid,.lots{grid-template-columns:1fr;}
+  .depts{grid-template-columns:repeat(2,1fr);padding:0 24px 64px;}
+  .section{padding:64px 24px;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .topbar-inner{padding:9px 24px;flex-wrap:wrap;gap:6px;}
+  .nav{padding:18px 24px;}
+  footer{padding:64px 24px 26px;}
+  .lot-detail{grid-template-columns:1fr;gap:40px;padding:36px 24px 90px;}
+  .lot-overlay-topbar{padding:16px 24px;}
+  .related-strip{padding:0 24px 90px;}
+  .related-grid{grid-template-columns:repeat(2,1fr);}
+}
 </style>
 </head>
 <body>
@@ -291,15 +400,23 @@ display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
       <a href="#sales" class="btn-ghost">Upcoming Calendar</a>
     </div>
   </div>
-  <div class="hero-panel">
-    <div class="lot-tag">Lot 01 · Evening Sale</div><h3>Untitled (Interior, Evening)</h3>
-    <div class="est">Estimate on request</div>
+  <div class="hero-panel" onclick="openLot('lot1')">
+    <div class="canvas-wrap wash-1">
+      <div class="lotnum-watermark">01</div>
+    </div>
+    <div class="caption">
+      <div>
+        <span class="lot-tag">Lot 01 · Evening Sale</span>
+        <h3>Untitled (Interior, Evening)</h3>
+      </div>
+      <div class="est">Estimate<br>on request</div>
+    </div>
   </div>
 </section>
 
 <div class="marquee-wrap">
   <div class="marquee">
-    <span>Modern & Contemporary Art</span>·<span>Works on Paper</span>·<span>Fine Jewelry</span>·<span>Rare Objects</span>·<span>Private Collections</span>·<span>Modern & Contemporary Art</span>·<span>Works on Paper</span>·<span>Fine Jewelry</span>·<span>Rare Objects</span>·<span>Private Collections</span>
+    <span>Modern &amp; Contemporary Art</span><span class="sep">·</span><span>Works on Paper</span><span class="sep">·</span><span>Fine Jewelry</span><span class="sep">·</span><span>Rare Objects</span><span class="sep">·</span><span>Private Collections</span><span class="sep">·</span><span>Modern &amp; Contemporary Art</span><span class="sep">·</span><span>Works on Paper</span><span class="sep">·</span><span>Fine Jewelry</span><span class="sep">·</span><span>Rare Objects</span><span class="sep">·</span><span>Private Collections</span>
   </div>
 </div>
 
@@ -314,7 +431,7 @@ display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
   <div class="sales-grid">
     <div class="sale-card">
       <div class="date">14 September, 6PM</div>
-      <h3>The Evening Sale: Modern & Contemporary</h3>
+      <h3>The Evening Sale: Modern &amp; Contemporary</h3>
       <p>A curated selection of forty works spanning three generations of painting.</p>
       <div class="loc">Live · Yerevan Salesroom</div>
     </div>
@@ -339,23 +456,22 @@ display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
       <span class="eyebrow">Currently on View</span>
       <h2>Featured Lots</h2>
     </div>
-    <a href="#" class="view-all">All Lots →</a>
-  </div>
+    <a href="#" class="view-all">All Lots →</a></div>
   <div class="lots">
-    <div class="lot-card">
-      <div class="frame"><span class="no">Lot 01</span></div>
+    <div class="lot-card" onclick="openLot('lot1')">
+      <div class="frame"><span class="no">Lot 01</span><div class="canvas-wrap wash-1"><div class="lotnum-watermark">01</div></div></div>
       <h3>Untitled (Interior, Evening)</h3>
       <div class="medium">Oil on linen, 2025</div>
       <div class="estimate">Estimate<strong>$18,000 – 24,000</strong></div>
     </div>
-    <div class="lot-card">
-      <div class="frame"><span class="no">Lot 02</span></div>
+    <div class="lot-card" onclick="openLot('lot2')">
+      <div class="frame"><span class="no">Lot 02</span><div class="canvas-wrap wash-2"><div class="lotnum-watermark">02</div></div></div>
       <h3>Second Threshold</h3>
       <div class="medium">Oil and cold wax on panel, 2024</div>
       <div class="estimate">Estimate<strong>$9,500 – 13,000</strong></div>
     </div>
-    <div class="lot-card">
-      <div class="frame"><span class="no">Lot 03</span></div>
+    <div class="lot-card" onclick="openLot('lot3')">
+      <div class="frame"><span class="no">Lot 03</span><div class="canvas-wrap wash-3"><div class="lotnum-watermark">03</div></div></div>
       <h3>Correspondence No. 4</h3>
       <div class="medium">Mixed pigment on paper, 2026</div>
       <div class="estimate">Estimate<strong>$4,200 – 6,000</strong></div>
@@ -364,17 +480,25 @@ display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
 </section>
 
 <section class="depts" id="departments">
-  <div class="dept"><div class="mark">M</div><h4>Modern Art</h4><span>142 lots</span></div>
-  <div class="dept"><div class="mark">P</div><h4>Works on Paper</h4><span>68 lots</span></div>
-  <div class="dept"><div class="mark">J</div><h4>Fine Jewelry</h4><span>91 lots</span></div>
-  <div class="dept"><div class="mark">O</div><h4>Rare Objects</h4><span>54 lots</span></div>
+  <div class="dept" onclick="location.hash='lots'">
+    <div class="mark">M</div><h4>Modern Art</h4><span>142 lots</span>
+  </div>
+  <div class="dept" onclick="location.hash='lots'">
+    <div class="mark">P</div><h4>Works on Paper</h4><span>68 lots</span>
+  </div>
+  <div class="dept" onclick="location.hash='lots'">
+    <div class="mark">J</div><h4>Fine Jewelry</h4><span>91 lots</span>
+  </div>
+  <div class="dept" onclick="location.hash='lots'">
+    <div class="mark">O</div><h4>Rare Objects</h4><span>54 lots</span>
+  </div>
 </section>
 
 <div class="provenance">
   <div class="provenance-inner">
     <div class="mark-lines"><span></span></div>
     <blockquote>"Every lot that passes through our rooms carries a history we take as seriously as its estimate."</blockquote>
-    <cite>— Head of Sale, Modern & Contemporary Department</cite>
+    — Head of Sale, Modern &amp; Contemporary Department
   </div>
 </div>
 
@@ -398,17 +522,364 @@ display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
         <a href="#">Buyer's Guide</a>
       </div>
       <div class="footer-col">
-        <h5>Connect</h5><a href="mailto:hello@elles.art">hello@elles.art</a>
+        <h5>Connect</h5>
+        <a href="mailto:hello@elles.art">hello@elles.art</a>
         <a href="#">Instagram</a>
         <a href="#">Catalogue Sign-up</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Elle's — Fine Art & Objects</span>
+      <span>© 2026 Elle's — Fine Art &amp; Objects</span>
       <span>Yerevan · Paris · London</span>
     </div>
   </div>
 </footer>
+
+<div class="lot-overlay" id="lot1">
+  <div class="lot-overlay-topbar">
+    <a href="#lots" class="back" onclick="closeLot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg> Back to Sale</a>
+    <span class="lot-nav-id">Lot 01 of 84 · Evening Sale</span>
+  </div>
+  <div class="lot-detail">
+    <div class="lot-detail-media">
+      <div class="main-frame"><div class="canvas-wrap wash-1"><div class="lotnum-watermark">01</div></div></div>
+      <div class="thumb-row">
+        <div class="thumb active"><div class="canvas-wrap wash-1"></div></div>
+        <div class="thumb"><div class="canvas-wrap wash-3"></div></div>
+        <div class="thumb"><div class="canvas-wrap wash-5"></div></div>
+        <div class="thumb"><div class="canvas-wrap wash-2"></div></div>
+      </div>
+    </div>
+    <div class="lot-detail-info">
+      <div class="lot-tag">Lot 01 · The Evening Sale</div>
+      <h1>Untitled (Interior, Evening)</h1><div class="artist-line">Marguerite Solano, b. 1978</div>
+
+      <div class="spec-list">
+        <div class="spec-row"><span class="k">Medium</span><span class="v">Oil on linen</span></div>
+        <div class="spec-row"><span class="k">Executed</span><span class="v">2025</span></div>
+        <div class="spec-row"><span class="k">Dimensions</span><span class="v">116 × 89 cm (45⅝ × 35 in)</span></div>
+        <div class="spec-row"><span class="k">Signature</span><span class="v">Signed and dated lower right</span></div>
+        <div class="spec-row"><span class="k">Condition</span><span class="v">Excellent · report available on request</span></div>
+      </div>
+
+      <div class="estimate-box">
+        <div class="label">Estimate</div>
+        <div class="amount">$18,000 – 24,000</div>
+        <div class="sold-note">Buyer's premium and applicable taxes not included</div>
+      </div>
+
+      <div class="lot-actions">
+        <a href="#contact" class="btn-primary" onclick="closeLot()">Request a Condition Report</a>
+        <a href="#contact" class="btn-outline" onclick="closeLot()">Register to Bid</a>
+      </div>
+
+      <div class="lot-body">
+        <h3 class="block-h">Description</h3>
+        <p>A quiet, low-lit domestic interior rendered in Solano's characteristic close tonal range — umber, bone, and a single band of lamp-gold drawn across the far wall. The composition withholds more than it shows: a doorway left open onto darkness, a chair angled as though just vacated.</p>
+        <p>Painted during the artist's residency outside Lisbon, the work belongs to a small series exploring domestic space as a site of memory rather than habitation.</p>
+
+        <h3 class="block-h">Provenance</h3>
+        <ul>
+          <li>The artist's studio, acquired directly by the present owner, 2025</li>
+          <li>Private collection, New York</li>
+        </ul>
+
+        <h3 class="block-h">Exhibited</h3>
+        <ul>
+          <li>Lisbon, Estúdio Aberto, "Rooms Without Names," 2025, no. 4</li>
+        </ul>
+
+        <h3 class="block-h">Specialist Note</h3>
+        <p>This lot is offered directly from the artist's most recent series and has not previously appeared at auction. Solano's evening market has grown steadily since her 2023 institutional debut.</p>
+      </div>
+    </div>
+  </div>
+  <div class="related-strip">
+    <h4>You May Also Like</h4>
+    <div class="related-grid">
+      <div class="lot-card" onclick="openLot('lot2')">
+        <div class="frame"><div class="canvas-wrap wash-2"></div></div>
+        <h3>Second Threshold</h3>
+      </div>
+      <div class="lot-card" onclick="openLot('lot3')">
+        <div class="frame"><div class="canvas-wrap wash-3"></div></div>
+        <h3>Correspondence No. 4</h3>
+      </div>
+      <div class="lot-card" onclick="openLot('lot4')">
+        <div class="frame"><div class="canvas-wrap wash-4"></div></div>
+        <h3>Standing Figure, Study</h3>
+      </div>
+      <div class="lot-card" onclick="openLot('lot5')">
+        <div class="frame"><div class="canvas-wrap wash-5"></div></div>
+        <h3>The Long Table</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lot-overlay" id="lot2">
+  <div class="lot-overlay-topbar">
+    <a href="#lots" class="back" onclick="closeLot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg> Back to Sale</a>
+    <span class="lot-nav-id">Lot 02 of 84 · Evening Sale</span>
+  </div>
+  <div class="lot-detail">
+    <div class="lot-detail-media">
+      <div class="main-frame"><div class="canvas-wrap wash-2"><div class="lotnum-watermark">02</div></div></div>
+      <div class="thumb-row">
+        <div class="thumb active"><div class="canvas-wrap wash-2"></div></div>
+        <div class="thumb"><div class="canvas-wrap wash-4"></div></div>
+        <div class="thumb"><div class="canvas-wrap wash-1"></div></div>
+      </div>
+    </div>
+    <div class="lot-detail-info">
+      <div class="lot-tag">Lot 02 · The Evening Sale</div>
+      <h1>Second Threshold</h1>
+      <div class="artist-line">Anouk Ferrand, b.1985</div>
+
+      <div class="spec-list">
+        <div class="spec-row"><span class="k">Medium</span><span class="v">Oil and cold wax on panel</span></div>
+        <div class="spec-row"><span class="k">Executed</span><span class="v">2024</span></div>
+        <div class="spec-row"><span class="k">Dimensions</span><span class="v">80 × 60 cm (31½ × 23⅝ in)</span></div>
+        <div class="spec-row"><span class="k">Signature</span><span class="v">Signed verso</span></div>
+        <div class="spec-row"><span class="k">Condition</span><span class="v">Very good · minor craquelure to lower edge, stable</span></div>
+      </div>
+
+      <div class="estimate-box">
+        <div class="label">Estimate</div>
+        <div class="amount">$9,500 – 13,000</div>
+        <div class="sold-note">Buyer's premium and applicable taxes not included</div>
+      </div>
+
+      <div class="lot-actions">
+        <a href="#contact" class="btn-primary" onclick="closeLot()">Request a Condition Report</a>
+        <a href="#contact" class="btn-outline" onclick="closeLot()">Register to Bid</a>
+      </div>
+
+      <div class="lot-body">
+        <h3 class="block-h">Description</h3>
+        <p>Built up in successive translucent layers of wax-bound oil, the panel's surface reads almost as sediment — a threshold worn down rather than painted on. Ferrand works without preparatory drawing, allowing each pass of the scraper to determine the next.</p>
+
+        <h3 class="block-h">Provenance</h3>
+        <ul>
+          <li>Galerie Non Standard, Brussels</li>
+          <li>Acquired by the present owner, 2024</li>
+        </ul>
+
+        <h3 class="block-h">Specialist Note</h3>
+        <p>Part of a body of work first shown at the 2024 Brussels gallery weekend, where it drew early institutional interest.</p>
+      </div>
+    </div>
+  </div>
+  <div class="related-strip">
+    <h4>You May Also Like</h4>
+    <div class="related-grid">
+      <div class="lot-card" onclick="openLot('lot1')"><div class="frame"><div class="canvas-wrap wash-1"></div></div><h3>Untitled (Interior, Evening)</h3></div>
+      <div class="lot-card" onclick="openLot('lot3')"><div class="frame"><div class="canvas-wrap wash-3"></div></div><h3>Correspondence No. 4</h3></div>
+      <div class="lot-card" onclick="openLot('lot4')"><div class="frame"><div class="canvas-wrap wash-4"></div></div><h3>Standing Figure, Study</h3></div>
+      <div class="lot-card" onclick="openLot('lot6')"><div class="frame"><div class="canvas-wrap wash-6"></div></div><h3>Reliquary, Small</h3></div>
+    </div>
+  </div>
+</div>
+
+<div class="lot-overlay" id="lot3">
+  <div class="lot-overlay-topbar">
+    <a href="#lots" class="back" onclick="closeLot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg> Back to Sale</a>
+    <span class="lot-nav-id">Lot 03 of 84 · Works on Paper</span>
+  </div>
+  <div class="lot-detail">
+    <div class="lot-detail-media">
+      <div class="main-frame"><div class="canvas-wrap wash-3"><div class="lotnum-watermark">03</div></div></div>
+      <div class="thumb-row">
+        <div class="thumb active"><div class="canvas-wrap wash-3"></div></div>
+        <div class="thumb"><div class="canvas-wrap wash-5"></div></div>
+      </div>
+    </div>
+    <div class="lot-detail-info">
+      <div class="lot-tag">Lot 03 · Works on Paper</div>
+      <h1>Correspondence No. 4</h1>
+      <div class="artist-line">Iason Petrakis, b. 1991</div>
+
+      <div class="spec-list">
+        <div class="spec-row"><span class="k">Medium</span><span class="v">Mixed pigment on paper</span></div>
+        <div class="spec-row"><span class="k">Executed</span><span class="v">2026</span></div>
+        <div class="spec-row"><span class="k">Dimensions</span><span class="v">42 × 30 cm (16½ × 11¾ in)</span></div>
+        <div class="spec-row"><span class="k">Signature</span><span class="v">Signed and numbered, edition of one</span></div>
+        <div class="spec-row"><span class="k">Condition</span><span class="v">Excellent · unframed, sold with mount</span></div>
+      </div><div class="estimate-box">
+        <div class="label">Estimate</div>
+        <div class="amount">$4,200 – 6,000</div>
+        <div class="sold-note">Buyer's premium and applicable taxes not included</div>
+      </div>
+
+      <div class="lot-actions">
+        <a href="#contact" class="btn-primary" onclick="closeLot()">Request a Condition Report</a>
+        <a href="#contact" class="btn-outline" onclick="closeLot()">Register to Bid</a>
+      </div>
+
+      <div class="lot-body">
+        <h3 class="block-h">Description</h3>
+        <p>Fourth in an ongoing series of works made in response to letters exchanged between the artist and his late grandmother, translating handwriting rhythm into pigment gesture on raw paper.</p>
+
+        <h3 class="block-h">Provenance</h3>
+        <ul>
+          <li>The artist's studio</li>
+        </ul>
+
+        <h3 class="block-h">Specialist Note</h3>
+        <p>Offered as part of our online timed sale dedicated to works on paper, without reserve.</p>
+      </div>
+    </div>
+  </div>
+  <div class="related-strip">
+    <h4>You May Also Like</h4>
+    <div class="related-grid">
+      <div class="lot-card" onclick="openLot('lot1')"><div class="frame"><div class="canvas-wrap wash-1"></div></div><h3>Untitled (Interior, Evening)</h3></div>
+      <div class="lot-card" onclick="openLot('lot2')"><div class="frame"><div class="canvas-wrap wash-2"></div></div><h3>Second Threshold</h3></div>
+      <div class="lot-card" onclick="openLot('lot5')"><div class="frame"><div class="canvas-wrap wash-5"></div></div><h3>The Long Table</h3></div>
+      <div class="lot-card" onclick="openLot('lot6')"><div class="frame"><div class="canvas-wrap wash-6"></div></div><h3>Reliquary, Small</h3></div>
+    </div>
+  </div>
+</div>
+
+<div class="lot-overlay" id="lot4">
+  <div class="lot-overlay-topbar">
+    <a href="#lots" class="back" onclick="closeLot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg> Back to Sale</a>
+    <span class="lot-nav-id">Lot 04 of 84 · Evening Sale</span>
+  </div>
+  <div class="lot-detail">
+    <div class="lot-detail-media">
+      <div class="main-frame"><div class="canvas-wrap wash-4"><div class="lotnum-watermark">04</div></div></div>
+      <div class="thumb-row"><div class="thumb active"><div class="canvas-wrap wash-4"></div></div><div class="thumb"><div class="canvas-wrap wash-2"></div></div></div>
+    </div>
+    <div class="lot-detail-info">
+      <div class="lot-tag">Lot 04 · The Evening Sale</div>
+      <h1>Standing Figure, Study</h1>
+      <div class="artist-line">Rasa Vilkas, b. 1972</div>
+      <div class="spec-list">
+        <div class="spec-row"><span class="k">Medium</span><span class="v">Graphite and charcoal on paper</span></div>
+        <div class="spec-row"><span class="k">Executed</span><span class="v">2023</span></div>
+        <div class="spec-row"><span class="k">Dimensions</span><span class="v">56 × 38 cm (22 × 15 in)</span></div>
+        <div class="spec-row"><span class="k">Condition</span><span class="v">Good · light foxing to margin, does not affect image</span></div>
+      </div>
+      <div class="estimate-box">
+        <div class="label">Estimate</div>
+        <div class="amount">$3,000 – 4,500</div>
+        <div class="sold-note">Buyer's premium and applicable taxes not included</div>
+      </div>
+      <div class="lot-actions">
+        <a href="#contact" class="btn-primary" onclick="closeLot()">Request a Condition Report</a>
+        <a href="#contact" class="btn-outline" onclick="closeLot()">Register to Bid</a>
+      </div>
+      <div class="lot-body">
+        <h3 class="block-h">Description</h3>
+        <p>A preparatory study for the larger canvas <span style="color:var(--wine);font-style:italic;">Figures at Rest</span> (private collection), notable for its unresolved, searching contour line.</p>
+        <h3 class="block-h">Provenance</h3>
+        <ul><li>The artist's estate</li><li>Private collection, London</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lot-overlay" id="lot5"><div class="lot-overlay-topbar">
+    <a href="#lots" class="back" onclick="closeLot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg> Back to Sale</a>
+    <span class="lot-nav-id">Lot 05 of 84 · Works on Paper</span>
+  </div>
+  <div class="lot-detail">
+    <div class="lot-detail-media">
+      <div class="main-frame"><div class="canvas-wrap wash-5"><div class="lotnum-watermark">05</div></div></div>
+      <div class="thumb-row"><div class="thumb active"><div class="canvas-wrap wash-5"></div></div><div class="thumb"><div class="canvas-wrap wash-3"></div></div></div>
+    </div>
+    <div class="lot-detail-info">
+      <div class="lot-tag">Lot 05 · Works on Paper</div>
+      <h1>The Long Table</h1>
+      <div class="artist-line">Marguerite Solano, b. 1978</div>
+      <div class="spec-list">
+        <div class="spec-row"><span class="k">Medium</span><span class="v">Watercolor and gouache on paper</span></div>
+        <div class="spec-row"><span class="k">Executed</span><span class="v">2022</span></div>
+        <div class="spec-row"><span class="k">Dimensions</span><span class="v">34 × 48 cm (13⅜ × 19 in)</span></div>
+        <div class="spec-row"><span class="k">Condition</span><span class="v">Excellent</span></div>
+      </div>
+      <div class="estimate-box">
+        <div class="label">Estimate</div>
+        <div class="amount">$5,500 – 7,500</div>
+        <div class="sold-note">Buyer's premium and applicable taxes not included</div>
+      </div>
+      <div class="lot-actions">
+        <a href="#contact" class="btn-primary" onclick="closeLot()">Request a Condition Report</a>
+        <a href="#contact" class="btn-outline" onclick="closeLot()">Register to Bid</a>
+      </div>
+      <div class="lot-body">
+        <h3 class="block-h">Description</h3>
+        <p>An early watercolor by Solano, predating her turn to oil, and among the first works to feature the elongated interiors that recur throughout her practice.</p>
+        <h3 class="block-h">Provenance</h3>
+        <ul><li>Private collection, Lisbon</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lot-overlay" id="lot6">
+  <div class="lot-overlay-topbar">
+    <a href="#lots" class="back" onclick="closeLot()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg> Back to Sale</a>
+    <span class="lot-nav-id">Lot 06 of 84 · Objects of Distinction</span>
+  </div>
+  <div class="lot-detail">
+    <div class="lot-detail-media">
+      <div class="main-frame"><div class="canvas-wrap wash-6"><div class="lotnum-watermark">06</div></div></div>
+      <div class="thumb-row"><div class="thumb active"><div class="canvas-wrap wash-6"></div></div></div>
+    </div>
+    <div class="lot-detail-info">
+      <div class="lot-tag">Lot 06 · Objects of Distinction</div>
+      <h1>Reliquary, Small</h1>
+      <div class="artist-line">Attributed workshop, Northern Europe</div>
+      <div class="spec-list">
+        <div class="spec-row"><span class="k">Medium</span><span class="v">Gilt brass and rock crystal</span></div>
+        <div class="spec-row"><span class="k">Period</span><span class="v">Late 19th century</span></div>
+        <div class="spec-row"><span class="k">Dimensions</span><span class="v">18 × 11 × 9 cm</span></div>
+        <div class="spec-row"><span class="k">Condition</span><span class="v">Good · consistent with age, report available</span></div>
+      </div>
+      <div class="estimate-box">
+        <div class="label">Estimate</div>
+        <div class="amount">$2,800 – 3,800</div>
+        <div class="sold-note">Buyer's premium and applicable taxes not included</div>
+      </div>
+      <div class="lot-actions">
+        <a href="#contact" class="btn-primary" onclick="closeLot()">Request a Condition Report</a>
+        <a href="#contact" class="btn-outline" onclick="closeLot()">Register to Bid</a>
+      </div>
+      <div class="lot-body">
+        <h3 class="block-h">Description</h3><p>A small devotional reliquary in gilt brass with a rock crystal viewing panel, of a form associated with private domestic chapels.</p>
+        <h3 class="block-h">Provenance</h3>
+        <ul><li>Private European collection</li><li>Acquired at auction, Paris, 1998</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openLot(id){
+  document.querySelectorAll('.lot-overlay').forEach(function(el){el.classList.remove('active');});
+  var target = document.getElementById(id);
+  if(target){
+    target.classList.add('active');
+    target.scrollTop = 0;
+    document.body.style.overflow='hidden';
+    history.pushState(null,'','#'+id);
+  }
+}
+function closeLot(){
+  document.querySelectorAll('.lot-overlay').forEach(function(el){el.classList.remove('active');});
+  document.body.style.overflow='';
+}
+window.addEventListener('popstate', function(){
+  var hash = location.hash.replace('#','');
+  if(document.getElementById(hash) && document.getElementById(hash).classList.contains('lot-overlay')){
+    openLot(hash);
+  } else {
+    closeLot();
+  }
+});
+</script>
 
 </body>
 </html>
